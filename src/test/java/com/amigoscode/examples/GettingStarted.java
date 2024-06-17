@@ -27,9 +27,8 @@ public class GettingStarted {
                     break;
                 }
             }
+            System.out.println(person);
         }
-        youngPeople.forEach(System.out::println);
-
     }
 
     @Test
