@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 public class GettingStarted {
@@ -36,10 +35,10 @@ public class GettingStarted {
     @Test
     public void declarativeApproachUsingStreams() throws Exception {
         List<Person> people = MockData.getPeople();
-        List<Person> youngPeople = people.stream()
+        people.stream()
                 .filter(p -> p.getAge() <= 18)
                 .limit(10)
-                .collect(Collectors.toList());
-        youngPeople.forEach(System.out::println);
+                .toList()
+                .forEach(System.out::println);
     }
 }
